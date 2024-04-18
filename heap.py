@@ -60,8 +60,22 @@ def find_kth_smallest(nums, k):
     ###################################
     ###                             ###
     ###                             ###
+    sorted=[]
+    lenght=len(nums)
+    for i in range(0, lenght):
+        sorted.append(nums[i])
+    for i in range(0, lenght-1):
+        for j in range(i+1, lenght):
+            #print(i,". ==i  ",j,". ==j")
+            if sorted[j]<sorted[i]:
+                temp=sorted[i]
+                sorted[i]=sorted[j]
+                sorted[j]=temp    
+    return sorted[k-1]
+
     ###                             ###
     ###################################
+
 
 
 
