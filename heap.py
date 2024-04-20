@@ -60,18 +60,25 @@ def find_kth_smallest(nums, k):
     ###################################
     ###                             ###
     ###                             ###
-    sorted=[]
-    lenght=len(nums)
-    for i in range(0, lenght):
-        sorted.append(nums[i])
-    for i in range(0, lenght-1):
-        for j in range(i+1, lenght):
-            #print(i,". ==i  ",j,". ==j")
-            if sorted[j]<sorted[i]:
-                temp=sorted[i]
-                sorted[i]=sorted[j]
-                sorted[j]=temp    
-    return sorted[k-1]
+    maxheaplist=MaxHeap()
+    for index in range(0, len(nums)):
+        maxheaplist.insert(nums[index])
+        #print("Pievienoja ",nums[index]," ",maxheaplist.__init__)
+        print("Pievienoja ",nums[index]," ",maxheaplist.remove())
+    
+    
+    #sorted=[]
+    #lenght=len(nums)
+    #for i in range(0, lenght):
+    #    sorted.append(nums[i])
+    #for i in range(0, lenght-1):
+    #    for j in range(i+1, lenght):
+    #        #print(i,". ==i  ",j,". ==j")
+    #        if sorted[j]<sorted[i]:
+    #            temp=sorted[i]
+    #            sorted[i]=sorted[j]
+    #            sorted[j]=temp    
+    #return sorted[k-1]
 
     ###                             ###
     ###################################
