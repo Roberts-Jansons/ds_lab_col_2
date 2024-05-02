@@ -59,14 +59,8 @@ class MaxHeap:
 def find_kth_smallest(nums, k):
     ###################################
     ###                             ###
-    ###                             ###
-    maxheaplist=MaxHeap()
-    for index in range(0, len(nums)):
-        maxheaplist.insert(nums[index])
-        #print("Pievienoja ",nums[index]," ",maxheaplist.__init__)
-        print("Pievienoja ",nums[index]," ",maxheaplist.remove())
     
-    
+    ######
     #sorted=[]
     #lenght=len(nums)
     #for i in range(0, lenght):
@@ -79,6 +73,26 @@ def find_kth_smallest(nums, k):
     #            sorted[i]=sorted[j]
     #            sorted[j]=temp    
     #return sorted[k-1]
+    ######
+
+
+    maxheaplist=MaxHeap()
+    for index in range(0, len(nums)):
+        maxheaplist.insert(nums[index])
+        #print("Pievienoja ",nums[index]," ",maxheaplist.heap)
+ 
+    #print("parent with index 0",maxheaplist._parent(1))
+
+    #print("Start=",maxheaplist.heap)
+    for i in range(0,len(maxheaplist.heap)-1):
+        for j in range(i+1,len(maxheaplist.heap)):
+            if maxheaplist.heap[i]>maxheaplist.heap[j]:
+                #print("samainīs ",maxheaplist.heap[i]," ",maxheaplist.heap[j])
+                maxheaplist._swap(i,j)
+                #print("Now=",maxheaplist.heap)
+    
+    #print("Finished=",maxheaplist.heap)
+    return maxheaplist.heap[k-1]
 
     ###                             ###
     ###################################
